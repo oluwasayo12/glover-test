@@ -4,6 +4,7 @@ system that makes use of maker-checker rules for creating, updating and deleting
 This is API only,
 
 ## Setup
+- Database is using sqlite. Create a file with name "database.sqlite" in folder "database" before proceeding
 - Clone Repository
 - Run "composer install"
 - Run "php artisan migrate"
