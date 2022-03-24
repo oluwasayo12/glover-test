@@ -15,9 +15,9 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id('rq_id');
-            $table->integer('user_id');
-            $table->enum('rq_type', ['create','update','delete']);
-            $table->json('rq_data');
+            $table->integer('customer_id')->nullable();
+            $table->enum('rq_type', ['create','update','delete'])->default('create');
+            $table->json('rq_data')->nullable();
             $table->enum('rq_status',['Pending','Approved','Declined'])->default('Pending');
             $table->timestamps();
         });
