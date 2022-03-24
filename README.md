@@ -10,6 +10,7 @@ This is API only,
 - Run "php artisan db:seed" to seed default admin users with their roles and permissions
 - Default credentials can be found below
 - Copy .env.example content to .env
+- To run tests "php artisan test"
 
 ## View only access
     "email": "super_admin@glover.com",
