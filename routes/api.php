@@ -28,6 +28,11 @@ Route::prefix("auth")->name("auth.")->group(function () {
 });
 
 //authenticated routes
+
+Route::middleware(['auth:sanctum'])->prefix('v1')->group(function() {
+    Route::post('logout', [AuthenticationController::class, 'logout'])->name("logout");
+});
+
 Route::middleware(['auth:sanctum','role:super_admin|create_request_admin|update_request_admin'])->prefix('v1')->group(function() {
     Route::get('view-pending-requests', [ViewRequestController::class, 'show'])->name("show");
 });
